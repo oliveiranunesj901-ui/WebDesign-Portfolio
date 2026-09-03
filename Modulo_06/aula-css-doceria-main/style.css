@@ -1,0 +1,151 @@
+/*variaveis css (:root)*/
+:root {
+    --cor-principal: #751b0f;
+    --cor-segundaria: #3a0400;
+    --cor-texto: #a82118;
+    --cor-fundo: #fdfcfa;
+    --cor-fundo-claro: #ffffff;
+    --cor-branco: #a32626;
+    --fonte-padrao: 'Segoe UI', Arial, sans-serif;
+    --espacamento-secao: 60px 40px --borda-arredondando:12PX;
+}
+
+/* seleção,estilização e herança*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*cabeçalho(Flexbox)*/
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-branco);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+logo {
+    font: size 1.5rem;
+    font-weight: bold;
+    color: #e0d9d9;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+/*Pseudo-classe :hover + tansição*/
+.menu a {
+    transition: color 0.3s ease;
+}
+
+.menu a:hove {
+    color: var(--cor-secundaria);
+}
+
+/* hero(baner principal)*/
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--cor-fundo-claro));
+}
+.hero h1{
+    font-size: 2.2rem;
+}
+.botao{
+    display:inline-block;
+    margin: top 20px;
+    padding: 12px 28px;
+    background-color:var(--color-principal);
+    color:var(--cor-branco);
+    border-radius: 30px ;
+    transition: transform 0.3s ease, backgroud-color 0,3s ease;
+}
+.hero h1{
+    font-size:2.2rem;
+}
+.botao{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px ;
+    background-color: var(--cor-pincipal);
+    color:var(--color-branco);
+    border-radius: 30px ;
+    transition: :transform 0.3s aese, background-color 0.3s ease;
+}
+/* transição no haver do botão*/
+.botao:haver{
+    background-color: var(--cor-secundaria);
+    transform: center;
+}
+.produtos{
+   padding: grid;
+   text-align: center;
+}
+.grid-produtos{
+    display: grid;
+    grid-template-columns: repeat(4, 1 fr); /*4 colunas em telas grandes*/
+    gap: 25px;
+    margin-top: 30px;
+}
+.card{
+    background-color:var(--cor-branco);
+    border-radius: var(--borda-arredondada);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*animação: osb cards aparecem subindo ao carregar a pagina*/
+    animation: aparecer 0.6s ease-in-out;
+}
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15)
+}
+.preco{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--color-principal);
+}
+/*definção de animação usada acima*/
+@keyframes aparecer{
+    from{
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*---- Sobre (flexbox) ----*/
+.sobre{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: var(--espacamento-secao);
+    background-color: var(--cor-fundo-claro);
+}
