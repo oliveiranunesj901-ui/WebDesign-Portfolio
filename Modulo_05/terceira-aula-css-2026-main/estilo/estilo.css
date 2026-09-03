@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'franklin';
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #ffffff;
+}
+
+/* === VÌDEO DE FUNDO ===*/
+
+/* o video fica fixo, atrás de tudo, cobrindo a tela inteira*/
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+
+}
+
+/*camada escura por cima do video, para o texto ficar legivel*/
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(43, 43, 48, 0.541);
+    z-index: -1;
+}
+
+.bg-overlay h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* == CABEÇALHO == */
+header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 6.1rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(247, 218, 218, 0.616);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    opacity: 0.9;
+}
+
+/* == CARDS == */
+.container-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(42, 48, 134, 0.253);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*essa transição faz a imagem crescer suavimente*/
+    transition: transform 0.5s ease;
+}
+
+/*ao passar o mouse, a imagem dá um leve zoom*/
+.card:hover img {
+    transform: scale(1.15);
+}
+
+/* o conteúdo do card fica escondido embaixo,fora da vista */
+.card-conteudo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    transform: translateY(60%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/*ao passar o mouse no card, o conteúdo sobe e aparece*/
+.card:hover .card-conteudo {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-conteudo h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.card-conteudo p {
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    color: #eeeeee;
+    opacity: 0.92;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #ff5c5c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff2e2e;
+}
+
+/*===RESPONSIVO===*/
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        height: 320px;
+    }
+}
